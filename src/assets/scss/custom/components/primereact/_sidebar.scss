@@ -1,0 +1,45 @@
+.p-sidebar {
+  &.p-sidebar-right {
+    width: 820px;
+    border: none;
+    padding: 0;
+    .p-sidebar-close {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      top: 12px;
+      left: 15px;
+      z-index: 10;
+    }
+    .sidebar-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+      .sidebar-header {
+        height: 60px;
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 15px 12px 56px;
+        z-index: 9;
+        box-shadow: $box-shadow-sm;
+        .action-wrapper {
+          .btn {
+            margin-left: 10px;
+          }
+        }
+      }
+      .sidebar-content {
+        flex: 1;
+        padding: 30px;
+        overflow: auto;
+        height: calc(100vh - 60px);
+      }
+    }
+  }
+}

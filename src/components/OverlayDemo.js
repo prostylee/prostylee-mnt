@@ -102,7 +102,7 @@ export const OverlayDemo = () => {
                             <div className="p-col-6">
                                 <Button type="button" label="Image" onClick={toggle} className="p-button-success" />
                                 <OverlayPanel ref={op} appendTo={document.body} showCloseIcon>
-                                    <img src="assets/demo/images/product/blue-band.jpg" alt="Blue Band" />
+                                    <img src="./assets/demo/images/product/blue-band.jpg" alt="Blue Band" />
                                 </OverlayPanel>
                             </div>
                             <div className="p-col-6">

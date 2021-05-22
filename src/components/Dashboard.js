@@ -211,28 +211,28 @@ export const Dashboard = () => {
                     <ul>
                         <li>
                             <button className="p-link">
-                                <img src="assets/layout/images/avatar_1.png" width="35" alt="avatar1" />
+                                <img src="./assets/layout/images/avatar_1.png" width="35" alt="avatar1" />
                                 <span className="name">Claire Williams</span>
                                 <span className="email">clare@primereact.com</span>
                             </button>
                         </li>
                         <li>
                             <button className="p-link">
-                                <img src="assets/layout/images/avatar_2.png" width="35" alt="avatar2" />
+                                <img src="./assets/layout/images/avatar_2.png" width="35" alt="avatar2" />
                                 <span className="name">Jason Dourne</span>
                                 <span className="email">jason@primereact.com</span>
                             </button>
                         </li>
                         <li>
                             <button className="p-link">
-                                <img src="assets/layout/images/avatar_3.png" width="35" alt="avatar3" />
+                                <img src="./assets/layout/images/avatar_3.png" width="35" alt="avatar3" />
                                 <span className="name">Jane Davidson</span>
                                 <span className="email">jane@primereact.com</span>
                             </button>
                         </li>
                         <li>
                             <button className="p-link">
-                                <img src="assets/layout/images/avatar_4.png" width="35" alt="avatar4" />
+                                <img src="./assets/layout/images/avatar_4.png" width="35" alt="avatar4" />
                                 <span className="name">Tony Corleone</span>
                                 <span className="email">tony@primereact.com</span>
                             </button>

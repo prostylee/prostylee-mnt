@@ -1,0 +1,225 @@
+.p-inputtext {
+  @extend .form-control;
+  width: auto;
+  display: initial;
+  &:enabled {
+    &:hover {
+      border-color: $input-border-color;
+    }
+    &:focus {
+      border-color: $primary;
+    }
+  }
+  &.is-invalid {
+    &:enabled {
+      &:hover, &:focus {
+        border-color: $danger;
+      }
+    }
+  }
+  &.p-plaintext {
+    @extend .form-control-plaintext;
+    &:enabled {
+      &:hover, &:focus {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.p-dropdown {
+  border-color: $input-border-color;
+  &:not(.p-disabled) {
+    &:hover {
+      border-color: $input-border-color;
+    }
+    &.p-focus {
+      border-color: $primary;
+    }
+  }
+  .p-dropdown-trigger {
+    .p-dropdown-trigger-icon {
+      font-size: 14px;
+    }
+  }
+  &.is-invalid {
+    border-color: $danger;
+    &:not(.p-disabled) {
+      &:hover, &.p-focus {
+        border-color: $danger;
+        box-shadow: 0 0 0 0.15rem rgba($danger, .25);
+      }
+    }
+  }
+  &.p-plaintext {
+    @extend .form-control-plaintext;
+    padding: 0;
+    opacity: 1;
+    .p-dropdown-label {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .p-dropdown-trigger {
+      display: none;
+    }
+    &:enabled {
+      &:hover, &:focus {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.p-multiselect {
+  border-color: $input-border-color;
+
+  &:not(.p-disabled) {
+    &:hover {
+      border-color: $input-border-color;
+    }
+
+    &.p-focus {
+      border-color: $primary;
+    }
+  }
+
+  .p-multiselect-label-container {
+    .p-multiselect-label {
+      margin: 0;
+      padding: 0.5rem 0.75rem;
+      padding-right: 2em;
+      height: calc(1.5em + 1rem + 2px);
+    }
+  }
+
+  .p-multiselect-trigger {
+    .p-multiselect-trigger-icon {
+      font-size: 14px;
+    }
+  }
+
+  &.is-invalid {
+    border-color: $danger;
+
+    &:not(.p-disabled) {
+      &:hover, &.p-focus {
+        border-color: $danger;
+        box-shadow: 0 0 0 0.15rem rgba($danger, .25);
+      }
+    }
+  }
+}
+
+.p-multiselect-panel {
+  .p-multiselect-items-wrapper {
+    .p-multiselect-items {
+      .p-multiselect-item {
+        &.p-highlight {
+          background-color: $gray-200;
+          color: #333333;
+        }
+        label {
+          margin: 0;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+.p-calendar {
+  width: 100%;
+}
+.p-inputnumber {
+  width: 100%;
+}
+
+.p-checkbox {
+  .p-checkbox-box {
+    border-color: $input-border-color;
+    &:not(.p-disabled) {
+      &:hover {
+        border-color: $input-border-color;
+      }
+      &.p-focus {
+        border-color: $primary;
+      }
+    }
+  }
+  &.is-invalid {
+    .p-checkbox-box {
+      border-color: $danger;
+      &:not(.p-disabled).p-focus {
+        border-color: $danger;
+        box-shadow: 0 0 0 0.15rem rgba($danger, .25);
+      }
+    }
+  }
+}
+
+.p-chips {
+  width: 100%;
+  > ul.p-inputtext {
+    min-height: calc(1.5em + 1rem + 2px);
+    height: auto;
+    .p-chips-token {
+      margin: 0.143em 0.286em 0.143em 0;
+      .p-chips-token-icon {
+        font-size: 0.8em;
+      }
+    }
+    .p-chips-input-token {
+      padding: 0;
+      margin: 0.143em 0.286em 0.143em 0;
+      input {
+        height: 27px;
+        margin: 0;
+      }
+    }
+    &:not(.p-disabled) {
+      &:hover {
+        border-color: $input-border-color;
+      }
+      &.p-focus {
+        border-color: $primary;
+      }
+    }
+  }
+  &.is-invalid {
+    > ul.p-inputtext {
+      border-color: $danger;
+      &:hover, &.p-focus {
+        border-color: $danger;
+      }
+      &.p-focus {
+        box-shadow: 0 0 0 0.15rem rgba($danger, .25);
+      }
+    }
+  }
+}
+
+.form-group {
+  .p-inputtext {
+    width: 100%;
+    display: block;
+  }
+  .p-dropdown, .p-multiselect {
+    width: 100%;
+  }
+}
+
+.custom-chips {
+  .badge {
+    font-size: 100%;
+    font-weight: normal;
+    margin-right: 4px;
+    .badge-delete-icon {
+      margin-left: 4px;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 14px;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+$datatable-border-color: #E5E7E9 !default;
+.p-datatable {
+  .p-datatable-header {
+    border-color: $datatable-border-color;
+    background: #fff;
+    border-radius: $border-radius $border-radius 0 0;
+  }
+  .p-datatable-wrapper {
+    .p-datatable-thead > tr > th,
+    .p-datatable-tbody > tr > td {
+      border-color: $datatable-border-color;
+      padding: 14px 12px;
+      border-left: 0;
+      border-right: 0;
+      text-align: left;
+      &:first-child {
+        border-left: 1px solid $datatable-border-color;
+      }
+      &:last-child {
+        border-right: 1px solid $datatable-border-color;
+      }
+      &.p-selection-column {
+        width: 45px;
+        border-right: 1px solid $datatable-border-color;
+      }
+    }
+    .p-datatable-tbody > tr {
+      &:nth-child(even) {
+        background: #f7f7f7;
+      }
+    }
+    .p-datatable-thead {
+      > tr > th {
+        background: #F8F8F8;
+        color: #333;
+        border-bottom: 0;
+      }
+      .p-sortable-column {
+        &:not(.p-highlight):hover {
+          background: #F8F8F8;
+        }
+        .p-sortable-column-icon {
+          font-size: 14px;
+          margin-left: 10px;
+        }
+        &.p-highlight {
+          .p-sortable-column-icon {
+            color: #848484;
+          }
+        }
+      }
+    }
+  }
+  .p-paginator {
+    border-color: $datatable-border-color;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    background: #fff;
+    > .p-paginator-element {
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+    .p-paginator-pages {
+      height: 100%;
+      .p-paginator-page {
+        border-radius: 50%;
+        min-width: 28px;
+        height: 28px;
+        line-height: 28px;
+        margin: 0 2px;
+      }
+    }
+    .p-dropdown {
+      height: 32px;
+      .p-dropdown-label {
+        background: #f7f7f7;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: 100%;
+      }
+      .p-dropdown-trigger {
+        background: #f7f7f7;
+      }
+    }
+  }
+  .global-search {
+    text-align: left;
+    input {
+      width: 300px;
+    }
+  }
+}

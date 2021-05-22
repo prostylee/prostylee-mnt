@@ -1,0 +1,25 @@
+// Alert plugin
+@import "~react-confirm-alert/src/react-confirm-alert.css";
+.react-confirm-alert-overlay {
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.4);
+  animation: react-confirm-alert-fadeIn 0.2s 0.05s forwards;
+}
+.react-confirm-alert {
+  .react-confirm-alert-button-group {
+    justify-content: flex-end;
+    button:first-child {
+      @extend .btn;
+      @extend .btn-light;
+    }
+    button:not(:first-child) {
+      @extend .btn;
+      @extend .btn-primary;
+    }
+  }
+  .react-confirm-alert-body {
+    h1 {
+      font-size: 20px;
+    }
+  }
+}
