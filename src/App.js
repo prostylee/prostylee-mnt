@@ -54,6 +54,7 @@ import '@fullcalendar/timegrid/main.css';
 import './assets/scss/flags/flags.css';
 import './assets/scss/layout.scss';
 import './App.scss';
+import {listenAuth} from './helpers/auth-listener';
 
 const App = () => {
 
@@ -67,6 +68,11 @@ const App = () => {
     const sidebar = useRef();
 
     const history = useHistory();
+
+    useEffect(() => {
+      console.log('Register an Auth Listener');
+      listenAuth();
+    }, []);
 
     let menuClick = false;
 

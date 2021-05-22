@@ -58,6 +58,12 @@ module.exports = {
         exclude: [helpers.root('public/index.html')]
       },
       {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false
+        }
+      },
+      {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         exclude: ['/node_modules']
