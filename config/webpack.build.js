@@ -7,11 +7,10 @@ const common = require('./webpack.common.js');
  * Webpack Plugins
  */
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const stage = process.env.STAGE || 'dev';
 console.log(`BUILD STAGE: ${stage}`);
@@ -33,6 +32,7 @@ module.exports = merge(common, {
   mode: 'production',
 
   optimization: {
+    minimize: true,
     /**
      * chunks: ‘all’ indicates which chunks will be selected for optimization.
      * Providing all can be particularly powerful,
@@ -55,11 +55,10 @@ module.exports = merge(common, {
        */
       new CompressionPlugin({
         test: /\.js$|\.css$|\.html$/,
-        filename: '[path].gz[query]',
+        filename: '[path][base].gz',
         algorithm: 'gzip',
         threshold: 10240,
-        minRatio: 0.8,
-        cache: false
+        minRatio: 0.8
       }),
       /**
        * uses uglify-js to minify your JavaScript files.
@@ -79,15 +78,9 @@ module.exports = merge(common, {
        * and will optimize and minimize it. The CSS processor used for optimization is cssnano.
        * All comments will be removed from our minified CSS and no messages will be print to the console.
        *
-       * @see https://github.com/NMFR/optimize-css-assets-webpack-plugin
+       * @see https://github.com/webpack-contrib/css-minimizer-webpack-plugin
        */
-      new OptimizeCSSAssetsPlugin({
-        cssProcessor: require('cssnano'),
-        cssProcessorOptions: {
-          preset: ['default', {discardComments: {removeAll: true}}]
-        },
-        canPrint: false
-      })
+      new CssMinimizerPlugin(),
     ]
   },
   plugins: [new webpack.DefinePlugin(envKeys)]

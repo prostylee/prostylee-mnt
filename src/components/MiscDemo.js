@@ -79,11 +79,11 @@ export const MiscDemo = () => {
                     <h4>Avatar</h4>
                     <h5>Avatar Group</h5>
                     <AvatarGroup className="p-mb-3">
-                        <Avatar image="assets/demo/images/avatar/amyelsner.png" size="large" shape="circle"></Avatar>
-                        <Avatar image="assets/demo/images/avatar/asiyajavayant.png" size="large" shape="circle"></Avatar>
-                        <Avatar image="assets/demo/images/avatar/onyamalimba.png" size="large" shape="circle"></Avatar>
-                        <Avatar image="assets/demo/images/avatar/ionibowcher.png" size="large" shape="circle"></Avatar>
-                        <Avatar image="assets/demo/images/avatar/xuxuefeng.png" size="large" shape="circle"></Avatar>
+                        <Avatar image="images/avatar/amyelsner.png" size="large" shape="circle"></Avatar>
+                        <Avatar image="images/avatar/asiyajavayant.png" size="large" shape="circle"></Avatar>
+                        <Avatar image="images/avatar/onyamalimba.png" size="large" shape="circle"></Avatar>
+                        <Avatar image="images/avatar/ionibowcher.png" size="large" shape="circle"></Avatar>
+                        <Avatar image="images/avatar/xuxuefeng.png" size="large" shape="circle"></Avatar>
                         <Avatar label="+2" shape="circle" size="large" style={{ 'backgroundColor': '#9c27b0', 'color': '#ffffff' }}></Avatar>
                     </AvatarGroup>
 
@@ -161,18 +161,18 @@ export const MiscDemo = () => {
 
                     <h5>Image</h5>
                     <div className="p-d-flex p-ai-center p-flex-wrap">
-                        <Chip label="Amy Elsner" image="assets/demo/images/avatar/amyelsner.png" className="p-mr-2 p-mb-2" />
-                        <Chip label="Asiya Javayant" image="assets/demo/images/avatar/asiyajavayant.png" className="p-mr-2 p-mb-2" />
-                        <Chip label="Onyama Limba" image="assets/demo/images/avatar/onyamalimba.png" className="p-mr-2 p-mb-2" />
-                        <Chip label="Xuxue Feng" image="assets/demo/images/avatar/xuxuefeng.png" className="p-mb-2" removable />
+                        <Chip label="Amy Elsner" image="images/avatar/amyelsner.png" className="p-mr-2 p-mb-2" />
+                        <Chip label="Asiya Javayant" image="images/avatar/asiyajavayant.png" className="p-mr-2 p-mb-2" />
+                        <Chip label="Onyama Limba" image="images/avatar/onyamalimba.png" className="p-mr-2 p-mb-2" />
+                        <Chip label="Xuxue Feng" image="images/avatar/xuxuefeng.png" className="p-mb-2" removable />
                     </div>
 
                     <h5>Styling</h5>
                     <div className="p-d-flex p-ai-center p-flex-wrap">
                         <Chip label="Action" className="p-mr-2 p-mb-2 custom-chip" />
                         <Chip label="Apple" icon="pi pi-apple" className="p-mr-2 p-mb-2 custom-chip" />
-                        <Chip label="Onyama Limba" image="assets/demo/images/avatar/onyamalimba.png" className="p-mr-2 p-mb-2 custom-chip" />
-                        <Chip label="Xuxue Feng" image="assets/demo/images/avatar/xuxuefeng.png" className="custom-chip p-mb-2" removable />
+                        <Chip label="Onyama Limba" image="images/avatar/onyamalimba.png" className="p-mr-2 p-mb-2 custom-chip" />
+                        <Chip label="Xuxue Feng" image="images/avatar/xuxuefeng.png" className="custom-chip p-mb-2" removable />
                     </div>
                 </div>
 

@@ -104,7 +104,7 @@ export const TableDemo = () => {
         return (
             <>
                 <span className="p-column-title">Country</span>
-                <img src="./assets/demo/images/flags/flag_placeholder.png" alt={data.country.name} className={`flag flag-${data.country.code}`} width={30} height={20} />
+                <img src="images/flags/flag_placeholder.png" alt={data.country.name} className={`flag flag-${data.country.code}`} width={30} height={20} />
                 <span style={{ marginLeft: '.5em', verticalAlign: 'middle' }} className="image-text">{data.country.name}</span>
             </>
         );
@@ -114,7 +114,7 @@ export const TableDemo = () => {
         return (
             <>
                 <span className="p-column-title">Representative</span>
-                <img alt={data.representative.name} src={`assets/demo/images/avatar/${data.representative.image}`} width="32" style={{ verticalAlign: 'middle' }} />
+                <img alt={data.representative.name} src={`images/avatar/${data.representative.image}`} width="32" style={{ verticalAlign: 'middle' }} />
                 <span style={{ marginLeft: '.5em', verticalAlign: 'middle' }} className="image-text">{data.representative.name}</span>
             </>
         );
@@ -151,7 +151,7 @@ export const TableDemo = () => {
         return (
             <>
                 <span className="p-column-title">Image</span>
-                <img src={`assets/demo/images/product/${data.image}`} alt={data.image} className="product-image" />
+                <img src={`images/product/${data.image}`} alt={data.image} className="product-image" />
             </>
         );
     };
@@ -202,7 +202,7 @@ export const TableDemo = () => {
     const headerRowGroup = (data) => {
         return (
             <>
-                <img alt={data.representative.name} src={`assets/demo/images/avatar/${data.representative.image}`} width="32" style={{ verticalAlign: 'middle' }} />
+                <img alt={data.representative.name} src={`images/avatar/${data.representative.image}`} width="32" style={{ verticalAlign: 'middle' }} />
                 <span style={{ marginLeft: '.5em', verticalAlign: 'middle' }} className="image-text">{data.representative.name}</span>
             </>
         );

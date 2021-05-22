@@ -211,28 +211,28 @@ export const Dashboard = () => {
                     <ul>
                         <li>
                             <button className="p-link">
-                                <img src="./assets/layout/images/avatar_1.png" width="35" alt="avatar1" />
+                                <img src="images/avatar_1.png" width="35" alt="avatar1" />
                                 <span className="name">Claire Williams</span>
                                 <span className="email">clare@primereact.com</span>
                             </button>
                         </li>
                         <li>
                             <button className="p-link">
-                                <img src="./assets/layout/images/avatar_2.png" width="35" alt="avatar2" />
+                                <img src="images/avatar_2.png" width="35" alt="avatar2" />
                                 <span className="name">Jason Dourne</span>
                                 <span className="email">jason@primereact.com</span>
                             </button>
                         </li>
                         <li>
                             <button className="p-link">
-                                <img src="./assets/layout/images/avatar_3.png" width="35" alt="avatar3" />
+                                <img src="images/avatar_3.png" width="35" alt="avatar3" />
                                 <span className="name">Jane Davidson</span>
                                 <span className="email">jane@primereact.com</span>
                             </button>
                         </li>
                         <li>
                             <button className="p-link">
-                                <img src="./assets/layout/images/avatar_4.png" width="35" alt="avatar4" />
+                                <img src="images/avatar_4.png" width="35" alt="avatar4" />
                                 <span className="name">Tony Corleone</span>
                                 <span className="email">tony@primereact.com</span>
                             </button>
@@ -245,7 +245,7 @@ export const Dashboard = () => {
                 <div className="card">
                     <h1 style={{ fontSize: '16px' }}>Recent Sales</h1>
                     <DataTable value={products} className="p-datatable-customers" rows={5} style={{ marginBottom: '20px' }} paginator>
-                        <Column header="Logo" body={(data) => <img src={`assets/demo/images/product/${data.image}`} alt={data.image} width="50" />}></Column>
+                        <Column header="Logo" body={(data) => <img src={`images/product/${data.image}`} alt={data.image} width="50" />}></Column>
                         <Column field="name" header="Name" sortable></Column>
                         <Column field="category" header="Category" sortable></Column>
                         <Column field="price" header="Price" sortable body={(data) => formatCurrency(data.price)}></Column>

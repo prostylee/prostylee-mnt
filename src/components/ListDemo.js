@@ -68,7 +68,7 @@ export const ListDemo = () => {
         return (
             <div className="p-col-12">
                 <div className="product-list-item">
-                    <img src={`assets/demo/images/product/${data.image}`} alt={data.name} />
+                    <img src={`images/product/${data.image}`} alt={data.name} />
                     <div className="product-list-detail">
                         <div className="product-name">{data.name}</div>
                         <div className="product-description">{data.description}</div>
@@ -97,7 +97,7 @@ export const ListDemo = () => {
                         <span className={`product-badge status-${data.inventoryStatus.toLowerCase()}`}>{data.inventoryStatus}</span>
                     </div>
                     <div className="product-grid-item-content">
-                        <img src={`assets/demo/images/product/${data.image}`} alt={data.name} />
+                        <img src={`images/product/${data.image}`} alt={data.name} />
                         <div className="product-name">{data.name}</div>
                         <div className="product-description">{data.description}</div>
                         <Rating value={data.rating} readonly cancel={false}></Rating>

@@ -51,8 +51,8 @@ import 'prismjs/themes/prism-coy.css';
 import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 import '@fullcalendar/timegrid/main.css';
-import './layout/flags/flags.css';
-import './layout/layout.scss';
+import './assets/scss/flags/flags.css';
+import './assets/scss/layout.scss';
 import './App.scss';
 
 const App = () => {
@@ -256,7 +256,7 @@ const App = () => {
         return true;
     }
 
-    const logo = layoutColorMode === 'dark' ? 'assets/layout/images/logo-white.svg' : 'assets/layout/images/logo.svg';
+    const logo = layoutColorMode === 'dark' ? 'images/logo-white.svg' : 'images/logo.svg';
 
     const wrapperClass = classNames('layout-wrapper', {
         'layout-overlay': layoutMode === 'overlay',

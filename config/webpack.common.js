@@ -8,8 +8,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
@@ -197,15 +197,9 @@ module.exports = {
        * and will optimize and minimize it. The CSS processor used for optimization is cssnano.
        * All comments will be removed from our minified CSS and no messages will be print to the console.
        *
-       * @see https://github.com/NMFR/optimize-css-assets-webpack-plugin
+       * @see https://github.com/webpack-contrib/css-minimizer-webpack-plugin
        */
-      new OptimizeCSSAssetsPlugin({
-        cssProcessor: require('cssnano'),
-        cssProcessorOptions: {
-          preset: ['default', {discardComments: {removeAll: false}}]
-        },
-        canPrint: true
-      })
+      new CssMinimizerPlugin(),
     ]
   },
   plugins: [
@@ -242,6 +236,10 @@ module.exports = {
           to: helpers.root('dist')
         },
         {
+          from: helpers.root('src/assets/data'),
+          to: helpers.root('dist/data')
+        },
+        {
           from: helpers.root('src/assets/images'),
           to: helpers.root('dist/images')
         }
@@ -267,7 +265,7 @@ module.exports = {
      */
     new CompressionPlugin({
       test: /\.js$|\.css$|\.html$/,
-      filename: '[path].gz[query]',
+      filename: '[path][base].gz',
       algorithm: 'gzip',
       threshold: 10240,
       minRatio: 0.8
