@@ -12,8 +12,8 @@ import { FullCalendar } from 'primereact/fullcalendar';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { ProductService } from '../service/ProductService';
-import { EventService } from '../service/EventService';
+import { ProductService } from '../../service/demo/ProductService';
+import { EventService } from '../../service/demo/EventService';
 
 const dropdownCities = [
     { name: 'New York', code: 'NY' },

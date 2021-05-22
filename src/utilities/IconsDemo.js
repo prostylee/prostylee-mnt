@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button } from 'primereact/button';
-import { CodeHighlight } from '../components/CodeHighlight';
+import { CodeHighlight } from '../components/demo/CodeHighlight';
 
 export const IconsDemo = () => {
 

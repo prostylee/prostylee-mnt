@@ -43,7 +43,7 @@ module.exports = merge(common, {
       name: false
     },
     /**
-     * Imported modules are initialized for each runtime chunk separately.
+     * Imported components are initialized for each runtime chunk separately.
      * As webpack suggests, while working on a project with multiple entry points
      * you want to have only one runtime instance. For that you need to set it to ‘single’.
      */
