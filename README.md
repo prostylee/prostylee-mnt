@@ -24,5 +24,5 @@ Please reference this page: [sigma-react](https://github.com/primefaces/sigma-re
     ```
 5. Open browser at this link
     ```
-    http://localhost:8080
+    http://localhost:8060
     ```

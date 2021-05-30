@@ -4,24 +4,21 @@ export const types = {
   UPDATE_NETWORK_STATUS: 'UPDATE_NETWORK_STATUS',
   TOGGLE_LOADING: 'TOGGLE_LOADING',
   TOGGLE_THEME_MODE: 'TOGGLE_THEME_MODE',
+  GLOBAL_MESSAGE: 'GLOBAL_MESSAGE',
 };
 
 export const actions = {
   updateNetworkStatus: createAction(types.UPDATE_NETWORK_STATUS),
   toggleLoading: createAction(types.TOGGLE_LOADING),
   toggleThemeMode: createAction(types.TOGGLE_THEME_MODE),
-};
-
-export const selectors = {
-  getNetworkStatus: (state) => state.common.networkStatus,
-  getLoading: (state) => state.common.isLoading,
-  getThemeMode: (state) => state.common.themeMode,
+  globalMessage: createAction(types.GLOBAL_MESSAGE),
 };
 
 const initialState = {
   networkStatus: true,
   isLoading: false,
   themeMode: 'light',
+  globalMessage: null,
 };
 
 export default handleActions({
@@ -33,6 +30,9 @@ export default handleActions({
     },
     [types.TOGGLE_THEME_MODE]: (state, {payload}) => {
       return {...state, themeMode: payload};
+    },
+    [types.GLOBAL_MESSAGE]: (state, {payload}) => {
+      return {...state, globalMessage: payload};
     },
   },
   initialState,

@@ -1,3 +1,14 @@
+// https://primefaces.org/primereact/showcase/#/setup
+@import 'primereact/resources/themes/bootstrap4-light-purple/theme.css';
+@import 'primereact/resources/primereact.min.css';
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.css';
+@import 'prismjs/themes/prism-coy.css';
+
+@import '@fullcalendar/core/main.css';
+@import '@fullcalendar/daygrid/main.css';
+@import '@fullcalendar/timegrid/main.css';
+
 @import "variables";
 @import "sass/layout";
 @import "overrides";
