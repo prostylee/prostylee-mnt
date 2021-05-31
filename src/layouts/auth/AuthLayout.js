@@ -12,10 +12,12 @@ const AuthLayout = (props) => {
 
   const children = props.children || null;
   return (
-    <div className="app">
-      <Suspense fallback={<PreLoaderWidget />}>{children}</Suspense>
-      <GlobalError />
-      <Loading />
+    <div className="p-grid" style={{minHeight: '100vh', padding: 0, marginTop: 0}}>
+      <div className="p-col-12" style={{padding: 0}}>
+        <Suspense fallback={<PreLoaderWidget/>}>{children}</Suspense>
+        <GlobalError/>
+        <Loading/>
+      </div>
     </div>
   );
 }

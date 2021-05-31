@@ -1,5 +1,6 @@
 {
   "test": "Xin chào!",
+  "appName": "PROSTYLEE MANAGEMENT SYSTEM",
   "validation": {
     "required": "{{field}} bắt buộc nhập",
     "invalid": "{{field}} không hợp lệ",

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
+import SignOut from '../../pages/auth/sign-out';
 
 export const AppProfile = () => {
 
@@ -24,7 +25,7 @@ export const AppProfile = () => {
                 <ul className={classNames({ 'layout-profile-expanded': expanded })}>
                     <li><button type="button" className="p-link"><i className="pi pi-fw pi-user" /><span>Account</span></button></li>
                     <li><button type="button" className="p-link"><i className="pi pi-fw pi-inbox" /><span>Notifications</span><span className="menuitem-badge">2</span></button></li>
-                    <li><button type="button" className="p-link"><i className="pi pi-fw pi-power-off" /><span>Logout</span></button></li>
+                    <li><SignOut /></li>
                 </ul>
             </CSSTransition>
         </div>

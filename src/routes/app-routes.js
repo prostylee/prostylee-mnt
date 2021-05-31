@@ -6,6 +6,7 @@ import withLayout from '../layouts';
 import {mntRoutes} from '../modules/mnt/routes/mntRoutes';
 import {Error403} from '../pages/errors';
 import {containAny} from '../utilities/arrayUtils';
+import {DASHBOARD, SIGN_IN, SIGN_OUT} from '../modules/shared/constants/auth-menu-item';
 
 const SignIn = React.lazy(() => import('../pages/auth/sign-in'));
 const SignOut = React.lazy(() => import('../pages/auth/sign-out'));
@@ -49,15 +50,13 @@ const defaultRoutes = [
     component: () => <Redirect to="/"/>
   },
   {
-    path: '/auth/sign-in',
-    label: 'Sign In',
+    ...SIGN_IN,
     component: SignIn,
     layoutType: layoutConstants.LAYOUT_AUTHENTICATION,
     route: Route
   },
   {
-    path: '/auth/sign-out',
-    label: 'Sign Out',
+    ...SIGN_OUT,
     component: SignOut,
     layoutType: layoutConstants.LAYOUT_AUTHENTICATION,
     route: Route
@@ -66,9 +65,7 @@ const defaultRoutes = [
 
 const appRoutes = [
   {
-    path: '/',
-    label: 'Dashboard',
-    icon: 'pi pi-home',
+    ...DASHBOARD,
     badge: {
       variant: 'success',
       text: 'new'

@@ -11,55 +11,58 @@ import {Button} from 'primereact/button';
 import FieldError from '../../components/FieldError';
 import {getI18nMessage} from '../../helpers/i18n';
 import {useTranslation} from 'react-i18next';
+import {Divider} from 'primereact/divider';
 
 const SignIn = (props) => {
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
   const {user, loading, values, isSubmitting, handleChange, handleBlur, handleSubmit} = props;
 
   return (
     <>
       {loading && <PreLoaderWidget/>}
       {!user ? (
-        <div className="login-page">
-          <div className="login-wrapper">
-            <div className="login-form">
-              <div className="login-form-header mb-5">
-                <div className="logo"/>
-                <p>PROSTYLEE MANAGEMENT SYSTEM</p>
+          <div className="card" style={{padding: 0, marginBottom: 0}}>
+            <div className="p-grid" style={{minHeight: '100vh', marginTop: 0}}>
+
+              <div className="p-col-6 p-d-flex p-ai-center p-jc-center" style={{backgroundColor: '#823FFD'}}>
+                <img alt="Logo" src="/images/logo-white.png" />
               </div>
 
-              <div className="p-grid">
-                <div className="p-col-12 p-md-6">
-                  <div className="card p-fluid">
-                    <h5>Login</h5>
-                    <div className="p-field">
-                      <label htmlFor="email">{t('user:username')}</label>
-                      <InputText id="email" name="email" autoFocus
-                                 type="text"
-                                 aria-label="Email"
-                                 aria-describedby="email"
-                                 value={values.email}
-                                 onChange={handleChange}
-                                 onBlur={handleBlur}/>
-                      <FieldError formik={props} name="email"/>
-                    </div>
-                    <div className="p-field">
-                      <label htmlFor="password">{t('user:password')}</label>
-                      <Password id="password" name="password" autoComplete="off"
-                                value={values.password}
-                                onChange={handleChange}
-                                onBlur={handleBlur}/>
-                      <FieldError formik={props} name="password"/>
-                    </div>
-                    <div className="p-field">
-                      <Button className="btn-block" onClick={handleSubmit} disabled={isSubmitting}>{t('button.signIn')}</Button>
-                    </div>
+              <div className="p-col-6 p-d-flex p-ai-center p-jc-center">
+                <div className="p-fluid">
+                  <div className="p-text-center p-mt-4 p-mb-4">
+                    <h1>{t('appName')}</h1>
+                  </div>
+                  <div className="p-field">
+                    <label htmlFor="email">{t('user:username')}</label>
+                    <InputText id="email" name="email" autoFocus
+                               maxLength={128}
+                               type="text"
+                               aria-label="Email"
+                               aria-describedby="email"
+                               value={values.email}
+                               onChange={handleChange}
+                               onBlur={handleBlur}/>
+                    <FieldError formik={props} name="email"/>
+                  </div>
+                  <div className="p-field">
+                    <label htmlFor="password">{t('user:password')}</label>
+                    <Password id="password" name="password"
+                              autoComplete="off"
+                              maxLength={30}
+                              value={values.password}
+                              onChange={handleChange}
+                              onBlur={handleBlur}/>
+                    <FieldError formik={props} name="password"/>
+                  </div>
+                  <div className="p-field">
+                    <Button className="btn-block" onClick={handleSubmit} disabled={isSubmitting}>{t('button.signIn')}</Button>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
-        </div>
       ) : (
         <Redirect to="/"/>
       )}

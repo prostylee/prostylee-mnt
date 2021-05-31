@@ -1,31 +1,55 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import {userActions} from '../../redux/reducers';
+import React from 'react';
+import {useHistory} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {authActions} from '../../redux/reducers';
+import {confirmDialog} from 'primereact/components/confirmdialog/ConfirmDialog';
+import {SIGN_IN} from '../../modules/shared/constants/auth-menu-item';
 
-class SignOut extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+const SignOut = (props) => {
+
+  const history = useHistory();
+
+  const confirm = () => {
+    confirmDialog({
+      message: 'Are you sure you want to proceed?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => acceptFunc(),
+      reject: () => rejectFunc()
+    });
   }
 
-  componentDidMount() {
-    this.props.userActions.signOut();
-  }
+  const acceptFunc = () => {
+    props.signOut({
+      onSuccess: () => {
+        history.push(SIGN_IN.path);
+      }
+    });
+  };
 
-  render() {
-    const { user } = this.props;
-    return <React.Fragment>{!user ? <Redirect to="/" /> : null}</React.Fragment>;
-  }
+  const rejectFunc = () => {
+    // Do nothing
+  };
+
+  return (
+    <button onClick={confirm} type="button" className="p-link">
+      <i className="pi pi-fw pi-power-off"/>
+      <span>Logout</span>
+    </button>
+  );
 }
 
 const mapStateToProps = (state) => {
-  const { user } = state.Auth;
-  return { user };
+  const {user} = state.auth;
+  return {user};
 };
 
-const mapDispatchToProps = {
-  userActions
-};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: (data) => {
+      dispatch(authActions.signOut(data));
+    },
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignOut);

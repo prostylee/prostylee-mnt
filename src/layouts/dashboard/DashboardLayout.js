@@ -156,7 +156,7 @@ const DashboardLayout = (props) => {
     return true;
   }
 
-  const logo = layoutColorMode === 'dark' ? '/images/logo-white.svg' : '/images/logo.svg';
+  const logo = layoutColorMode === 'dark' ? '/images/logo-full.png' : '/images/logo-black-full.png';
 
   const wrapperClass = classNames('layout-wrapper', {
     'layout-overlay': layoutMode === 'overlay',
