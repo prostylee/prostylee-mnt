@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import classNames from 'classnames';
 import {CSSTransition} from 'react-transition-group';
 
-export const AppSubmenu = (props) => {
+const AppSubmenu = (props) => {
 
   const [activeIndex, setActiveIndex] = useState(null)
 
@@ -82,3 +82,5 @@ export const AppSubmenu = (props) => {
 
   return items ? <ul className={props.className}>{items}</ul> : null;
 };
+
+export default AppSubmenu;

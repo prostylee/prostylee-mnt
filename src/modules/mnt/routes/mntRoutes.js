@@ -12,7 +12,7 @@ const mntRoutes = [
       {
         ...menuItem.SHIPPING_METHOD,
         component: ShippingMethod,
-        roles: [ROLES.SYSTEM_ADMIN.code, ROLES.SELLER.code], // TODO only ADMIN
+        roles: [ROLES.SYSTEM_ADMIN.code, ROLES.BUYER.code], // TODO only ADMIN
       },
       {
         ...menuItem.SHIPPING_PROVIDER,

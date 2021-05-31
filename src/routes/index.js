@@ -21,7 +21,7 @@ const flattenRoutes = (routes) => {
 const generateIdForRoutes = (routes) => {
   routes = routes || [];
   routes.forEach((route) => {
-    route.id = md5(route.path);
+    route.id = route.path ? md5(route.path) : Math.floor(Math.random() * 1000000);
     if (route.items) {
       generateIdForRoutes(route.items);
     }

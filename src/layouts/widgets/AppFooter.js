@@ -4,9 +4,9 @@ export const AppFooter = () => {
 
     return (
         <div className="layout-footer">
-            <span className="footer-text" style={{ 'marginRight': '5px' }}>PrimeReact</span>
-            <img src="/images/logo.svg" alt="Logo" width="80" />
-            <span className="footer-text" style={{ 'marginLeft': '5px' }}>Theme and Layout</span>
+            <img src="/images/logo-full.png" alt="Logo" height="28" />
+          <span className="footer-text" style={{ 'marginLeft': '5px' }}>Prostylee Management System. </span>
+            <span className="footer-text" style={{ 'marginLeft': '5px' }}>Copyright &copy;{new Date().getFullYear()}</span>
         </div>
     );
 }

@@ -1,5 +1,4 @@
 export const MASTER_DATA = {
-  path: '/mnt/master-data',
   label: 'Danh mục',
   icon: 'pi pi-list'
 };

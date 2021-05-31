@@ -20,6 +20,7 @@ import {appRoutes, filterAuthenticatedRoutes} from '../../routes';
 import AppLogger from '../../helpers/app-logger';
 import GlobalError from '../../components/GlobalMessage';
 import Loading from '../../components/Loading';
+import {ScrollTop} from 'primereact/scrolltop';
 
 const loading = () => <div/>;
 
@@ -156,7 +157,7 @@ const DashboardLayout = (props) => {
     return true;
   }
 
-  const logo = layoutColorMode === 'dark' ? '/images/logo-full.png' : '/images/logo-black-full.png';
+  const logo = layoutColorMode === 'dark' ? '/images/logo-white.png' : '/images/logo-black-full.png';
 
   const wrapperClass = classNames('layout-wrapper', {
     'layout-overlay': layoutMode === 'overlay',
@@ -182,10 +183,10 @@ const DashboardLayout = (props) => {
       <CSSTransition classNames="layout-sidebar" timeout={{enter: 200, exit: 200}} in={isSidebarVisible()} unmountOnExit>
         <div ref={sidebar} className={sidebarClassName} onClick={onSidebarClick}>
           <div className="layout-logo" style={{cursor: 'pointer'}} onClick={() => history.push('/')}>
-            <img alt="Logo" src={logo}/>
+            <img alt="Logo" src={logo} style={{height: '36px'}}/>
           </div>
           <AppProfile/>
-          { menuReady && (<AppMenu model={menu} onMenuItemClick={onMenuItemClick}/>) }
+          {menuReady && (<AppMenu model={menu} onMenuItemClick={onMenuItemClick}/>)}
         </div>
       </CSSTransition>
 
@@ -200,8 +201,9 @@ const DashboardLayout = (props) => {
 
       <div className="layout-main">
         <Suspense fallback={loading()}>{props.children}</Suspense>
-        <GlobalError />
-        <Loading />
+        <ScrollTop/>
+        <GlobalError/>
+        <Loading/>
       </div>
 
       <AppFooter/>
