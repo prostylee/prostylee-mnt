@@ -1,0 +1,39 @@
+import {createAction, handleActions} from 'redux-actions';
+
+export const types = {
+  UPDATE_NETWORK_STATUS: 'UPDATE_NETWORK_STATUS',
+  TOGGLE_LOADING: 'TOGGLE_LOADING',
+  TOGGLE_THEME_MODE: 'TOGGLE_THEME_MODE',
+  GLOBAL_MESSAGE: 'GLOBAL_MESSAGE',
+};
+
+export const actions = {
+  updateNetworkStatus: createAction(types.UPDATE_NETWORK_STATUS),
+  toggleLoading: createAction(types.TOGGLE_LOADING),
+  toggleThemeMode: createAction(types.TOGGLE_THEME_MODE),
+  globalMessage: createAction(types.GLOBAL_MESSAGE),
+};
+
+const initialState = {
+  networkStatus: true,
+  isLoading: false,
+  themeMode: 'light',
+  globalMessage: null,
+};
+
+export default handleActions({
+    [types.UPDATE_NETWORK_STATUS]: (state, {payload}) => {
+      return {...state, networkStatus: payload};
+    },
+    [types.TOGGLE_LOADING]: (state, {payload}) => {
+      return {...state, isLoading: payload};
+    },
+    [types.TOGGLE_THEME_MODE]: (state, {payload}) => {
+      return {...state, themeMode: payload};
+    },
+    [types.GLOBAL_MESSAGE]: (state, {payload}) => {
+      return {...state, globalMessage: payload};
+    },
+  },
+  initialState,
+);

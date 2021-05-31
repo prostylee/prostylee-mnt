@@ -1,0 +1,30 @@
+{
+  "test": "Xin chào!",
+  "appName": "PROSTYLEE MANAGEMENT SYSTEM",
+  "validation": {
+    "required": "{{field}} bắt buộc nhập",
+    "invalid": "{{field}} không hợp lệ",
+    "min": "{{field}} tối thiểu {{length}} ký tự",
+    "max": "{{field}} tối đa {{length}} ký tự",
+    "duplicated": "{{field}} đã tồn tại",
+    "hint": "Nhập thông tin {{field}}"
+  },
+  "globalMessage": {
+    "error": "Lỗi",
+    "success": "Thành công",
+    "warn": "Cảnh báo",
+    "info": "Thông báo"
+  },
+  "errorCode": {
+    "Unknown": "Lỗi không xác định. Vui lòng liên hệ quản trị để được hỗ trợ!",
+    "UserNotFoundException": "Tên đăng nhập hoặc mật khẩu không đúng.",
+    "NotAuthorizedException": "Tên đăng nhập hoặc mật khẩu không đúng.",
+    "InvalidParameterException": "Thông tin cung cấp không hợp lệ.",
+    "LimitExceededException": "Yêu cầu không hợp lệ quá nhiều lần. Vui lòng thử lại sau!",
+    "CodeMismatchException": "Mã xác nhận không đúng."
+  },
+  "button": {
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất"
+  }
+}
