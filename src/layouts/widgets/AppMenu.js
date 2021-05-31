@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppSubmenu} from './AppSubmenu';
+import AppSubmenu from './AppSubmenu';
 
 export const AppMenu = (props) => {
     return (

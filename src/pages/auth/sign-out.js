@@ -4,16 +4,20 @@ import {connect} from 'react-redux';
 import {authActions} from '../../redux/reducers';
 import {confirmDialog} from 'primereact/components/confirmdialog/ConfirmDialog';
 import {SIGN_IN} from '../../modules/shared/constants/auth-menu-item';
+import {useTranslation} from 'react-i18next';
 
 const SignOut = (props) => {
 
+  const [t] = useTranslation();
   const history = useHistory();
 
   const confirm = () => {
     confirmDialog({
-      message: 'Are you sure you want to proceed?',
-      header: 'Confirmation',
+      message: t('label.confirmContinue'),
+      header: t('button.confirmation'),
       icon: 'pi pi-exclamation-triangle',
+      acceptLabel: t('button.ok'),
+      rejectLabel: t('button.cancel'),
       accept: () => acceptFunc(),
       reject: () => rejectFunc()
     });

@@ -23,8 +23,14 @@
     "LimitExceededException": "Yêu cầu không hợp lệ quá nhiều lần. Vui lòng thử lại sau!",
     "CodeMismatchException": "Mã xác nhận không đúng."
   },
+  "label": {
+    "confirmContinue": "Bạn có chắc là muốn tiếp tục?"
+  },
   "button": {
     "signIn": "Đăng nhập",
-    "signOut": "Đăng xuất"
+    "signOut": "Đăng xuất",
+    "confirmation": "Xác nhận",
+    "ok": "Đồng ý",
+    "cancel": "Bỏ qua"
   }
 }
