@@ -25,13 +25,13 @@ const SignIn = (props) => {
                 <img alt="Logo" src="/images/logo-white.png" />
               </div>
 
-              <div className="p-col-6 p-d-flex p-ai-center p-jc-center">
+              <div className="p-col-6 p-d-flex p-ai-center p-jc-center p-flex-column">
                 <div className="p-fluid">
                   <div className="p-text-center p-mt-4 p-mb-4">
                     <h1>{t('appName')}</h1>
                   </div>
                   <div className="p-field">
-                    <label htmlFor="email">{t('shipping-method:username')}</label>
+                    <label htmlFor="email">{t('user:username')}</label>
                     <InputText id="email" name="email" autoFocus
                                maxLength={128}
                                type="text"
@@ -41,7 +41,7 @@ const SignIn = (props) => {
                     <FieldError formik={props} name="email"/>
                   </div>
                   <div className="p-field">
-                    <label htmlFor="password">{t('shipping-method:password')}</label>
+                    <label htmlFor="password">{t('user:password')}</label>
                     <Password id="password" name="password"
                               autoComplete="off"
                               maxLength={30}
@@ -50,10 +50,8 @@ const SignIn = (props) => {
                               onBlur={handleBlur}/>
                     <FieldError formik={props} name="password"/>
                   </div>
-                  <div className="p-field">
-                    <Button className="btn-block" onClick={handleSubmit} disabled={isSubmitting}>{t('button.signIn')}</Button>
-                  </div>
                 </div>
+                <Button onClick={handleSubmit} disabled={isSubmitting}>{t('button.signIn')}</Button>
               </div>
 
             </div>

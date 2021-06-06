@@ -1,66 +1,60 @@
 import {put, takeLatest} from 'redux-saga/effects';
 import {shippingMethodTypes} from '../reducers';
-import AppLogger from '../../../../helpers/app-logger';
 import ShippingMethodService from '../../services/shipping-method-service';
 import {actions as shippingMethodActions} from '../reducers/shipping-method';
 
 const shippingMethodService = new ShippingMethodService();
 
 const getAll = function* ({payload: {filter = {}, pagination = {}, onSuccess = () => {}, onFail = () => {}}}) {
-  try {
-    const queryParams = {
-      ...filter,
-      sorts: (pagination.sortOrder === -1 ? '-' : '') + pagination.sortField,
-      page: pagination.page,
-      limit: pagination.limit
-    };
+  const queryParams = {
+    ...filter,
+    sorts: (pagination.sortOrder === -1 ? '-' : '') + pagination.sortField,
+    page: pagination.page,
+    limit: pagination.limit
+  };
 
-    const res = yield shippingMethodService.findAll(queryParams);
-    yield put(shippingMethodActions.getAllSuccess(res.data.data));
-    yield onSuccess();
-  } catch (e) {
-    AppLogger.error(e);
-    yield onFail(e);
+  const res = yield shippingMethodService.findAll(queryParams);
+  if (res && !res.error) {
+    yield put(shippingMethodActions.getAllSuccess(res.data));
+    yield onSuccess(res);
+  } else {
+    yield onFail(res);
   }
 };
 
 const getById = function* ({payload: {id, onSuccess = () => {}, onFail = () => {}}}) {
-  try {
-    const res = yield shippingMethodService.findById(id);
+  const res = yield shippingMethodService.findById(id);
+  if (res && !res.error) {
     yield onSuccess(res);
-  } catch (e) {
-    AppLogger.error(e);
-    yield onFail(e);
+  } else {
+    yield onFail(res);
   }
 };
 
 const create = function* ({payload: {body, onSuccess = () => {}, onFail = () => {}}}) {
-  try {
-    const res = yield shippingMethodService.create(body);
+  const res = yield shippingMethodService.create(body);
+  if (res && !res.error) {
     yield onSuccess(res);
-  } catch (e) {
-    AppLogger.error(e);
-    yield onFail(e);
+  } else {
+    yield onFail(res);
   }
 };
 
 const update = function* ({payload: {id, body, onSuccess = () => {}, onFail = () => {}}}) {
-  try {
-    const res = yield shippingMethodService.update(id, body);
+  const res = yield shippingMethodService.update(id, body);
+  if (res && !res.error) {
     yield onSuccess(res);
-  } catch (e) {
-    AppLogger.error(e);
-    yield onFail(e);
+  } else {
+    yield onFail(res);
   }
 };
 
 const deleteById = function* ({payload: {id, onSuccess = () => {}, onFail = () => {}}}) {
-  try {
-    yield shippingMethodService.deleteById(id);
-    yield onSuccess();
-  } catch (e) {
-    AppLogger.error(e);
-    yield onFail(e);
+  const res = yield shippingMethodService.deleteById(id);
+  if (res && !res.error) {
+    yield onSuccess(res);
+  } else {
+    yield onFail(res);
   }
 };
 
