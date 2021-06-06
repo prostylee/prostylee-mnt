@@ -1,6 +1,6 @@
 {
   "test": "Xin chào!",
-  "appName": "PROSTYLEE MANAGEMENT SYSTEM",
+  "appName": "Quản trị hệ thống Prostylee",
   "validation": {
     "required": "{{field}} bắt buộc nhập",
     "invalid": "{{field}} không hợp lệ",
@@ -21,16 +21,43 @@
     "NotAuthorizedException": "Tên đăng nhập hoặc mật khẩu không đúng.",
     "InvalidParameterException": "Thông tin cung cấp không hợp lệ.",
     "LimitExceededException": "Yêu cầu không hợp lệ quá nhiều lần. Vui lòng thử lại sau!",
-    "CodeMismatchException": "Mã xác nhận không đúng."
+    "CodeMismatchException": "Mã xác nhận không đúng.",
+    "SaveFailed": "Không thể lưu dữ liệu. Vui lòng thử lại sau!!!",
+    "DeleteFailed": "Không thể xoá dữ liệu. Vui lòng thử lại sau!!!"
+  },
+  "feature": {
+    "masterData": "Danh mục",
+    "shippingMethod": "Phương thức vận chuyển",
+    "shippingProvider": "Đơn vị vận chuyển"
+  },
+  "pagination": {
+    "currentPageReportTemplate": "Hiển thị {first} đến {last} trong {totalRecords} hàng"
   },
   "label": {
-    "confirmContinue": "Bạn có chắc là muốn tiếp tục?"
+    "id": "#",
+    "name": "Tên",
+    "desc": "Mô tả",
+    "createdAt": "Ngày tạo",
+    "updatedAt": "Ngày cập nhật",
+    "createdBy": "Người tạo",
+    "updatedBy": "Người cập nhật",
+    "confirmContinue": "Bạn có chắc là muốn tiếp tục?",
+    "confirmDelete": "Bạn có chắc là muốn xoá <b><i>{{data}}</i></b>?",
+    "emptyMessage": "Không tìm thấy dữ liệu",
+    "searchPlaceHolder": "Từ khoá cần tìm ...",
+    "savedSuccess": "Lưu dữ liệu thành công",
+    "deletedSuccess": "Xoá dữ liệu thành công"
   },
   "button": {
     "signIn": "Đăng nhập",
     "signOut": "Đăng xuất",
     "confirmation": "Xác nhận",
     "ok": "Đồng ý",
-    "cancel": "Bỏ qua"
+    "cancel": "Bỏ qua",
+    "add": "Thêm mới",
+    "edit": "Chỉnh sửa",
+    "delete": "Xoá",
+    "save": "Lưu",
+    "action": "Thao tác"
   }
 }

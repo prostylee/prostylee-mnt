@@ -279,7 +279,7 @@ module.exports = {
     /**
      * This plugin extracts CSS into separate files.
      * It creates a CSS file per JS file which contains CSS.
-     * It supports On-Demand-Loading of CSS and SourceMaps.
+     * It supports On-Demand-GlobalLoading of CSS and SourceMaps.
      *
      * @see https://github.com/webpack-contrib/mini-css-extract-plugin
      */

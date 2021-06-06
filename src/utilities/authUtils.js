@@ -1,5 +1,5 @@
 /**
- * Checks if user is authenticated
+ * Checks if shipping-method is authenticated
  */
 import {Auth} from 'aws-amplify';
 import AppLogger from '../helpers/app-logger';
@@ -11,7 +11,7 @@ const isUserAuthenticated = () => {
 };
 
 /**
- * Returns the logged in user
+ * Returns the logged in shipping-method
  */
 const getLoggedInUser = async () => {
   try {
@@ -25,7 +25,7 @@ const getLoggedInUser = async () => {
       roles: payload['cognito:groups'] || [],
     };
   } catch (err) {
-    AppLogger.debug('Could not get authentication user', err);
+    AppLogger.debug('Could not get authentication shipping-method', err);
     return null;
   }
 };

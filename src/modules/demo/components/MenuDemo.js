@@ -24,7 +24,7 @@ export const MenuDemo = () => {
             items: [
                 {
                     label: 'New',
-                    icon: 'pi pi-fw pi-user-plus',
+                    icon: 'pi pi-fw pi-shipping-method-plus',
                     items: [
                         {
                             label: 'Customer',
@@ -39,7 +39,7 @@ export const MenuDemo = () => {
                 },
                 {
                     label: 'Edit',
-                    icon: 'pi pi-fw pi-user-edit'
+                    icon: 'pi pi-fw pi-shipping-method-edit'
                 }
             ]
         },
@@ -80,7 +80,7 @@ export const MenuDemo = () => {
         },
         {
             label: 'Profile',
-            icon: 'pi pi-fw pi-user',
+            icon: 'pi pi-fw pi-shipping-method',
             items: [
                 {
                     label: 'Settings',
@@ -121,7 +121,7 @@ export const MenuDemo = () => {
             items: [
                 {
                     label: 'New',
-                    icon: 'pi pi-fw pi-user-plus',
+                    icon: 'pi pi-fw pi-shipping-method-plus',
                     items: [
                         {
                             label: 'Customer',
@@ -135,7 +135,7 @@ export const MenuDemo = () => {
                 },
                 {
                     label: 'Edit',
-                    icon: 'pi pi-fw pi-user-edit'
+                    icon: 'pi pi-fw pi-shipping-method-edit'
                 }
             ]
         },
@@ -175,7 +175,7 @@ export const MenuDemo = () => {
         },
         {
             label: 'Profile',
-            icon: 'pi pi-fw pi-user',
+            icon: 'pi pi-fw pi-shipping-method',
             items: [
                 {
                     label: 'Settings',
@@ -228,7 +228,7 @@ export const MenuDemo = () => {
                 },
                 {
                     label: 'Edit',
-                    icon: 'pi pi-fw pi-user-edit'
+                    icon: 'pi pi-fw pi-shipping-method-edit'
                 }
             ]
         },
@@ -381,7 +381,7 @@ export const MenuDemo = () => {
             items: [
                 {
                     label: 'New',
-                    icon: 'pi pi-fw pi-user-plus',
+                    icon: 'pi pi-fw pi-shipping-method-plus',
                     items: [
                         {
                             label: 'Customer',
@@ -396,7 +396,7 @@ export const MenuDemo = () => {
                 },
                 {
                     label: 'Edit',
-                    icon: 'pi pi-fw pi-user-edit'
+                    icon: 'pi pi-fw pi-shipping-method-edit'
                 }
             ]
         },
@@ -436,7 +436,7 @@ export const MenuDemo = () => {
         },
         {
             label: 'Profile',
-            icon: 'pi pi-fw pi-user',
+            icon: 'pi pi-fw pi-shipping-method',
             items: [
                 {
                     label: 'Settings',

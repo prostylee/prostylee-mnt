@@ -289,7 +289,7 @@ export const Crud = () => {
     );
 
     return (
-        <div className="p-grid crud-demo">
+        <div className="p-grid ps-table-wrapper">
             <div className="p-col-12">
                 <div className="card">
                     <Toast ref={toast} />

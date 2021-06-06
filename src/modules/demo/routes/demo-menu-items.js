@@ -36,7 +36,7 @@ const demoMenu = [
   {
     label: 'Pages', icon: 'pi pi-fw pi-clone',
     items: [
-      {label: 'Crud', icon: 'pi pi-fw pi-user-edit', path: '/crud'},
+      {label: 'Crud', icon: 'pi pi-fw pi-shipping-method-edit', path: '/crud'},
       {label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', path: '/calendar'},
       {label: 'Timeline', icon: 'pi pi-fw pi-calendar', path: '/timeline'},
       {label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', path: '/empty'}

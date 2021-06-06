@@ -6,16 +6,16 @@ const listener = (data) => {
   AppLogger.info('CognitoAuthListener ' + JSON.stringify(data));
   switch (data.payload.event) {
     case 'signIn':
-      AppLogger.info('user signed in');
+      AppLogger.info('shipping-method signed in');
       break;
     case 'signUp':
-      AppLogger.info('user signed up');
+      AppLogger.info('shipping-method signed up');
       break;
     case 'signOut':
-      AppLogger.info('user signed out');
+      AppLogger.info('shipping-method signed out');
       break;
     case 'signIn_failure':
-      AppLogger.error('user sign in failed');
+      AppLogger.error('shipping-method sign in failed');
       break;
     case 'tokenRefresh':
       AppLogger.info('token refresh succeeded');

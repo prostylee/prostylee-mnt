@@ -7,7 +7,7 @@ import userVi from './locales/vi/user.json';
 
 i18next.init({
   lng: 'vi', // language to use
-  fallbackLng: 'vi', // language to use if translations in user language are not available.
+  fallbackLng: 'vi', // language to use if translations in shipping-method language are not available.
   debug: true,
   interpolation: {escapeValue: false},  // React already does escaping
   ns: ['common', 'user'],

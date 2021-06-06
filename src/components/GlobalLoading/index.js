@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {ProgressSpinner} from 'primereact/progressspinner';
 import {Dialog} from 'primereact/dialog';
 
-const Loading = ({isLoading}) => {
+const GlobalLoading = ({isLoading}) => {
 
   return (
     <Dialog visible={isLoading} className={'loading-wrapper'} onHide={() => {}}>
@@ -13,8 +13,8 @@ const Loading = ({isLoading}) => {
 }
 
 const mapStateToProps = (state) => {
-  const {isLoading} = state.shared;
-  return {isLoading};
+  const {showGlobalLoading} = state.shared;
+  return {isLoading: showGlobalLoading};
 };
 
-export default connect(mapStateToProps)(Loading);
+export default connect(mapStateToProps)(GlobalLoading);

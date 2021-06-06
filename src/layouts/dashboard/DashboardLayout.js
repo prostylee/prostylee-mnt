@@ -19,7 +19,7 @@ import demoMenu from '../../modules/demo/routes/demo-menu-items';
 import {appRoutes, filterAuthenticatedRoutes} from '../../routes';
 import AppLogger from '../../helpers/app-logger';
 import GlobalError from '../../components/GlobalMessage';
-import Loading from '../../components/Loading';
+import Loading from '../../components/GlobalLoading';
 import {ScrollTop} from 'primereact/scrolltop';
 
 const loading = () => <div/>;
