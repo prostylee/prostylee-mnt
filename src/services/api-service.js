@@ -40,6 +40,7 @@ if (isDevMode) {
    */
   api.addMonitor(response => {
     AppLogger.debug('API response=', response);
+    // TODO problem: "NETWORK_ERROR"
   });
 
 
@@ -93,9 +94,9 @@ export const exchange = async (method, path, data = {}, config = {}) => {
     const authToken = await Auth.currentSession();
     AppLogger.debug('authToken=' + JSON.stringify(authToken));
 
-    if (authToken && authToken.accessToken) {
+    if (authToken && authToken.idToken) {
       api.setHeaders({
-        Authorization: 'Bearer ' + authToken.accessToken.jwtToken,
+        Authorization: 'Bearer ' + authToken.idToken.jwtToken,
         'X-PS-Authorization-Type': 'OPEN-ID',
       });
     }
@@ -120,6 +121,8 @@ export const exchange = async (method, path, data = {}, config = {}) => {
       };
       return {ok: true, data: response};
     }
+  }).catch(e => {
+    AppLogger.error("Call API ERROR", e);
   });
 };
 
