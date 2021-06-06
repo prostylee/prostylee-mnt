@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import {Toast} from 'primereact/toast';
 import {connect} from 'react-redux';
 import {getI18nMessage} from '../../helpers/i18n';
+import {ERROR} from '../../constants/severity';
 
 const GlobalMessage = ({globalMessage}) => {
   const toast = useRef(null);
@@ -9,7 +10,7 @@ const GlobalMessage = ({globalMessage}) => {
   useEffect(() => {
     if (globalMessage && toast.current) {
       toast.current.show({
-        severity: 'error',
+        severity: ERROR,
         summary: getI18nMessage('globalMessage.error'),
         detail: '',
         life: 3000,

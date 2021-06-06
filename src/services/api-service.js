@@ -1,6 +1,6 @@
 import {create} from 'apisauce'
 import {BASE_API_URL} from '../constants/apiUrls';
-import {SUCCESS} from '../constants/httpStatusCode';
+import {isClientError, isError, isServerError, isSuccess} from '../constants/httpStatusCode';
 import {Auth} from 'aws-amplify';
 import AppLogger from '../helpers/app-logger';
 
@@ -40,6 +40,7 @@ if (isDevMode) {
    */
   api.addMonitor(response => {
     AppLogger.debug('API response=', response);
+    // TODO problem: "NETWORK_ERROR"
   });
 
 
@@ -93,9 +94,9 @@ export const exchange = async (method, path, data = {}, config = {}) => {
     const authToken = await Auth.currentSession();
     AppLogger.debug('authToken=' + JSON.stringify(authToken));
 
-    if (authToken && authToken.accessToken) {
+    if (authToken && authToken.idToken) {
       api.setHeaders({
-        Authorization: 'Bearer ' + authToken.accessToken.jwtToken,
+        Authorization: 'Bearer ' + authToken.idToken.jwtToken,
         'X-PS-Authorization-Type': 'OPEN-ID',
       });
     }
@@ -104,25 +105,35 @@ export const exchange = async (method, path, data = {}, config = {}) => {
   }
 
   return api[method](path, data, config).then((res) => {
-    let response;
-    if (res && res.status === SUCCESS) {
-      response = {
+    if (!res) {
+      return res;
+    }
+    if (isSuccess(res.status)) {
+      return {
         status: res.status,
-        error: null,
+        error: false,
+        errorDetail: null,
         data: res.data,
       };
-      return {ok: true, data: response};
-    } else if (res && res.status !== SUCCESS) {
-      response = {
+    }
+    if (isError(res.status)) {
+      const response = {
         status: res.status,
-        error: res.data?.message,
+        error: true,
+        errorDetail: res.data,
         data: null,
       };
-      return {ok: true, data: response};
+      if (isClientError(res.status)) {
+        return response;
+      }
+      if (isServerError(res.status)) {
+        // TODO Global error handling -> redirect to error page
+        return response;
+      }
     }
+    return res;
   });
 };
-
 
 /**
  * Execute a GET call.

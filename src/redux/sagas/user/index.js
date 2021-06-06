@@ -5,7 +5,7 @@ import AppLogger from '../../../helpers/app-logger';
 
 const getProfile = function* ({payload: {userId, onSuccess, onFail}}) {
   try {
-    AppLogger.debug('Get user profile by userId=' + userId);
+    AppLogger.debug('Get shipping-method profile by userId=' + userId);
     yield onSuccess();
   } catch (e) {
     console.log(e);

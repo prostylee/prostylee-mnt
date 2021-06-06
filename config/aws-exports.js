@@ -14,7 +14,7 @@ const awsmobile = {
       "email",
       "openid",
       "profile",
-      "aws.cognito.signin.user.admin"
+      "aws.cognito.signin.shipping-method.admin"
     ],
     "redirectSignIn": "prostylee://",
     "redirectSignOut": "prostylee://",

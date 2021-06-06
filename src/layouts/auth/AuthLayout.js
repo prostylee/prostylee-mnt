@@ -1,7 +1,7 @@
 import React, {Suspense, useEffect} from 'react';
 import PreLoaderWidget from '../widgets/PreLoaderWidget';
 import GlobalError from '../../components/GlobalMessage';
-import Loading from '../../components/Loading';
+import Loading from '../../components/GlobalLoading';
 
 const AuthLayout = (props) => {
 

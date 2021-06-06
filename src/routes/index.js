@@ -29,7 +29,7 @@ const generateIdForRoutes = (routes) => {
 };
 
 /**
- * Only show the menus user can access.
+ * Only show the menus shipping-method can access.
  *
  * @param routes
  * @param roles
